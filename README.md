@@ -10,8 +10,8 @@ However, this cannot provide an easy way to query the data</br>
 <b>The Goal</b></br>
 The purpose of this project is to create a Postgres database and ETL pipeline to optimize queries to help Sparkify's analytics team
 
-<b>Database & ETL pipeline</b>
-Star Schema
+<b>Database & ETL pipeline</b></br>
+Methodology: Star Schema </br>
 The three most important advantages of using Star schema are:
 <ul><li>Denormalized tables</li>
     <li>Simplified queries</li>
