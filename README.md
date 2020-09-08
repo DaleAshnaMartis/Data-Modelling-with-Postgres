@@ -5,7 +5,7 @@ Sparkify is a music streaming app. The analytics team is particularly interested
 
 The data resides in two main directories:</br>
 <b>Songs metadata</b>: collection of JSON files that describes the songs such as title, artist name, year, etc </br>
-<b>Logs data</b>: collection of JSON files where each file covers the users activities over a given day
+<b>Logs data</b>: collection of JSON files where each file covers the users activities over a given day</br>
 However, this cannot provide an easy way to query the data</br>
 
 <b>The Goal</b></br>
