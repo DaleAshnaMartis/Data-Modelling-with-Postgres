@@ -16,7 +16,7 @@ Star Schema
 The three most important advantages of using Star schema are:
 <ul><li>Denormalized tables</li>
     <li>Simplified queries</li>
-    <li>Fast aggregation</li></ul></br>
+    <li>Fast aggregation</li></ul>
    
 <b>File Description</b></br>
 The source code is available in three separate Python scripts. Below is a brief description of the main files:
