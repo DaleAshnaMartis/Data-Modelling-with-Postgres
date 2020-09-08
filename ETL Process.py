@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[32]:
+# In[63]:
 
 
 from configparser import ConfigParser
@@ -13,13 +13,13 @@ import numpy as np
 from sql_queries import *
 
 
-# In[33]:
+# In[64]:
 
 
 # The below function creates an instance of the ConfigParsr class and makes use of its methods to read the config file
 
 
-# In[34]:
+# In[65]:
 
 
 def get_connection_byconfig(filepath,section):
@@ -45,32 +45,20 @@ def get_connection_byconfig(filepath,section):
      
 
 
-# In[35]:
+# In[66]:
 
 
 d=get_connection_byconfig('Config_ini','postgresql')
 
 
-# In[36]:
-
-
-print(d)
-
-
-# In[37]:
-
-
-print(d['host'])
-
-
-# In[38]:
+# In[67]:
 
 
 conn = psycopg2.connect(host=d['host'], user=d['user'], dbname="sparkifydb",password=d['password'],port=d['port'])
 cur = conn.cursor()
 
 
-# In[39]:
+# In[68]:
 
 
 def get_files(filepath):
@@ -90,19 +78,19 @@ def insert_from_dataframe(df, insert_query):
  
 
 
-# In[40]:
+# In[69]:
 
 
 song_files = get_files('/home/dale/Data Engineer Project/song-data/song_data/')
 
 
-# In[41]:
+# In[70]:
 
 
 len(song_files)
 
 
-# In[42]:
+# In[71]:
 
 
 df=pd.DataFrame()
@@ -111,49 +99,49 @@ for song_file in song_files:
 df.head()
 
 
-# In[43]:
+# In[72]:
 
 
 df.info()
 
 
-# In[44]:
+# In[73]:
 
 
 artist_data=df[['artist_id','artist_name','artist_latitude','artist_longitude','artist_location']]
 
 
-# In[45]:
+# In[74]:
 
 
 artist_data=artist_data.drop_duplicates()
 
 
-# In[46]:
+# In[75]:
 
 
 artist_data.info()
 
 
-# In[47]:
+# In[76]:
 
 
 artist_data = artist_data.replace(np.nan, None, regex=True)
 
 
-# In[48]:
+# In[77]:
 
 
 artist_data.info()
 
 
-# In[49]:
+# In[78]:
 
 
 insert_from_dataframe(artist_data,artists_insert_table)
 
 
-# In[50]:
+# In[79]:
 
 
 song_data = df[['song_id','title', 'artist_id', 'duration', 'year']]
@@ -162,19 +150,19 @@ song_data = song_data.replace(np.nan, None, regex=True)
 song_data.head()
 
 
-# In[51]:
+# In[80]:
 
 
 insert_from_dataframe(song_data,songs_insert_table)
 
 
-# In[52]:
+# In[81]:
 
 
 log_files = get_files('/home/dale/Data Engineer Project/log-data/')
 
 
-# In[53]:
+# In[82]:
 
 
 df=pd.DataFrame()
@@ -183,7 +171,7 @@ for log_files in log_files:
 df
 
 
-# In[54]:
+# In[83]:
 
 
 
@@ -192,7 +180,7 @@ df = df.replace(np.nan, None, regex=True)
 df.head()
 
 
-# In[55]:
+# In[84]:
 
 
 
@@ -213,19 +201,19 @@ tf = tf.drop_duplicates()
 tf.head()
 
 
-# In[56]:
+# In[85]:
 
 
 tf.info()
 
 
-# In[57]:
+# In[86]:
 
 
 insert_from_dataframe(tf, time_insert_table)
 
 
-# In[58]:
+# In[87]:
 
 
 user_df = df[['userId', 'firstName', 'lastName', 'gender', 'level']]
@@ -235,25 +223,13 @@ user_df = user_df[user_df['userId'] != '']
 user_df.head()
 
 
-# In[59]:
+# In[88]:
 
 
 insert_from_dataframe(user_df, users_insert_table)
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[60]:
+# In[89]:
 
 
 
@@ -269,19 +245,7 @@ for index, row in df.iterrows():
     
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[61]:
+# In[90]:
 
 
 
@@ -306,14 +270,8 @@ for index, row in df.iterrows():
                
 
 
-# In[62]:
+# In[91]:
 
 
 conn.close()
-
-
-# In[ ]:
-
-
-
 
