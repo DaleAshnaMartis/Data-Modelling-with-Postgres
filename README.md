@@ -6,10 +6,10 @@ Sparkify is a music streaming app. The analytics team is particularly interested
 The data resides in two main directories:</br>
 <b>Songs metadata</b>: collection of JSON files that describes the songs such as title, artist name, year, etc </br>
 <b>Logs data</b>: collection of JSON files where each file covers the users activities over a given day
-However, this cannot provide an easy way to query the data</br></br>
+However, this cannot provide an easy way to query the data</br>
 
 <b>The Goal</b></br>
-The purpose of this project is to create a Postgres database and ETL pipeline to optimize queries to help Sparkify's analytics team.
+The purpose of this project is to create a Postgres database and ETL pipeline to optimize queries to help Sparkify's analytics team
 
 <b>Database & ETL pipeline</b>
 Star Schema
@@ -18,7 +18,7 @@ The three most important advantages of using Star schema are:
     <li>Simplified queries</li>
     <li>Fast aggregation</li></ul></br>
    
-<b>File Description</b>
+<b>File Description</b></br>
 The source code is available in three separate Python scripts. Below is a brief description of the main files:
 <ul>
     <li><b>sql_queries.py</b> has all the queries needed to both create/drop tables for the database as well as a SQL query to get song_id and artist_id from other tables since they are not provided in logs dataset</li>
