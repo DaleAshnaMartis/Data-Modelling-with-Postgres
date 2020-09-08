@@ -3,12 +3,12 @@
 <b>Introduction</b></br>
 Sparkify is a music streaming app. The analytics team is particularly interested in understanding what songs users are listening to
 
-The data resides in two main directories:
-<b>Songs metadata</b>: collection of JSON files that describes the songs such as title, artist name, year, etc.
+The data resides in two main directories:</br>
+<b>Songs metadata</b>: collection of JSON files that describes the songs such as title, artist name, year, etc </br>
 <b>Logs data</b>: collection of JSON files where each file covers the users activities over a given day
-However, this cannot provide an easy way to query the data
+However, this cannot provide an easy way to query the data</br></br>
 
-<b>The Goal</b>
+<b>The Goal</b></br>
 The purpose of this project is to create a Postgres database and ETL pipeline to optimize queries to help Sparkify's analytics team.
 
 <b>Database & ETL pipeline</b>
